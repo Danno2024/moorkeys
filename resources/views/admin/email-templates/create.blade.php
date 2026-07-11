@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="flex items-center gap-3">
-                        <input type="checkbox" name="is_active" id="is_active" value="1" {{ old('is_active', true) ? 'checked' : '' }} class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                        <input type="checkbox" name="is_active" id="is_active" value="1" @checked(old('is_active', true)) class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                         <label for="is_active" class="text-sm font-medium text-gray-700">Active</label>
                     </div>
 
