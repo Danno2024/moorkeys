@@ -1,0 +1,101 @@
+﻿
+  GET|HEAD        / ...................................................................... home ΓÇ║ HomeController@index
+  GET|HEAD        2fa/recovery ............................. 2fa.recovery ΓÇ║ Admin\TwoFactorController@showRecoveryForm
+  POST            2fa/recovery ........................ 2fa.recovery.verify ΓÇ║ Admin\TwoFactorController@verifyRecovery
+  GET|HEAD        2fa/verify ................................... 2fa.verify ΓÇ║ Admin\TwoFactorController@showVerifyForm
+  POST            2fa/verify ................................................. 2fa. ΓÇ║ Admin\TwoFactorController@verify
+  GET|HEAD        admin/dashboard .................................. admin.dashboard ΓÇ║ Admin\DashboardController@index
+  GET|HEAD        admin/email-templates ............ admin.email-templates.index ΓÇ║ Admin\EmailTemplateController@index
+  POST            admin/email-templates ............ admin.email-templates.store ΓÇ║ Admin\EmailTemplateController@store
+  GET|HEAD        admin/email-templates/create ... admin.email-templates.create ΓÇ║ Admin\EmailTemplateController@create
+  PUT|PATCH       admin/email-templates/{email_template} admin.email-templates.update ΓÇ║ Admin\EmailTemplateControllerΓÇª
+  DELETE          admin/email-templates/{email_template} admin.email-templates.destroy ΓÇ║ Admin\EmailTemplateControlleΓÇª
+  GET|HEAD        admin/email-templates/{email_template}/edit admin.email-templates.edit ΓÇ║ Admin\EmailTemplateControlΓÇª
+  GET|HEAD        admin/email-templates/{email_template}/preview admin.email-templates.preview ΓÇ║ Admin\EmailTemplateCΓÇª
+  GET|HEAD        admin/invoice-templates ...... admin.invoice-templates.index ΓÇ║ Admin\InvoiceTemplateController@index
+  POST            admin/invoice-templates ...... admin.invoice-templates.store ΓÇ║ Admin\InvoiceTemplateController@store
+  GET|HEAD        admin/invoice-templates/create admin.invoice-templates.create ΓÇ║ Admin\InvoiceTemplateController@creΓÇª
+  PUT|PATCH       admin/invoice-templates/{invoice_template} admin.invoice-templates.update ΓÇ║ Admin\InvoiceTemplateCoΓÇª
+  DELETE          admin/invoice-templates/{invoice_template} admin.invoice-templates.destroy ΓÇ║ Admin\InvoiceTemplateCΓÇª
+  GET|HEAD        admin/invoice-templates/{invoice_template}/edit admin.invoice-templates.edit ΓÇ║ Admin\InvoiceTemplatΓÇª
+  GET|HEAD        admin/invoice-templates/{invoice_template}/preview admin.invoice-templates.preview ΓÇ║ Admin\InvoiceTΓÇª
+  GET|HEAD        admin/keys .................................. admin.keys.index ΓÇ║ Admin\ActivationKeyController@index
+  POST            admin/keys .................................. admin.keys.store ΓÇ║ Admin\ActivationKeyController@store
+  POST            admin/keys/bulk-create ........... admin.keys.bulk-create ΓÇ║ Admin\ActivationKeyController@bulkCreate
+  GET|HEAD        admin/keys/create ......................... admin.keys.create ΓÇ║ Admin\ActivationKeyController@create
+  GET|HEAD        admin/keys/{key} .............................. admin.keys.show ΓÇ║ Admin\ActivationKeyController@show
+  PUT|PATCH       admin/keys/{key} .......................... admin.keys.update ΓÇ║ Admin\ActivationKeyController@update
+  DELETE          admin/keys/{key} ........................ admin.keys.destroy ΓÇ║ Admin\ActivationKeyController@destroy
+  GET|HEAD        admin/keys/{key}/edit ......................... admin.keys.edit ΓÇ║ Admin\ActivationKeyController@edit
+  GET|HEAD        admin/pages ......................................... admin.pages.index ΓÇ║ Admin\PageController@index
+  POST            admin/pages ......................................... admin.pages.store ΓÇ║ Admin\PageController@store
+  GET|HEAD        admin/pages/create ................................ admin.pages.create ΓÇ║ Admin\PageController@create
+  PUT|PATCH       admin/pages/{page} ................................ admin.pages.update ΓÇ║ Admin\PageController@update
+  DELETE          admin/pages/{page} .............................. admin.pages.destroy ΓÇ║ Admin\PageController@destroy
+  GET|HEAD        admin/pages/{page}/edit ............................... admin.pages.edit ΓÇ║ Admin\PageController@edit
+  GET|HEAD        admin/plans ......................................... admin.plans.index ΓÇ║ Admin\PlanController@index
+  POST            admin/plans ......................................... admin.plans.store ΓÇ║ Admin\PlanController@store
+  GET|HEAD        admin/plans/create ................................ admin.plans.create ΓÇ║ Admin\PlanController@create
+  PUT|PATCH       admin/plans/{plan} ................................ admin.plans.update ΓÇ║ Admin\PlanController@update
+  DELETE          admin/plans/{plan} .............................. admin.plans.destroy ΓÇ║ Admin\PlanController@destroy
+  GET|HEAD        admin/plans/{plan}/edit ............................... admin.plans.edit ΓÇ║ Admin\PlanController@edit
+  GET|HEAD        admin/settings ................................ admin.settings.index ΓÇ║ Admin\SettingController@index
+  POST            admin/settings .............................. admin.settings.update ΓÇ║ Admin\SettingController@update
+  GET|HEAD        admin/settings/maintenance ........ admin.settings.maintenance ΓÇ║ Admin\SettingController@maintenance
+  POST            admin/settings/maintenance admin.settings.toggle-maintenance ΓÇ║ Admin\SettingController@toggleMainteΓÇª
+  GET|HEAD        admin/users ......................................... admin.users.index ΓÇ║ Admin\UserController@index
+  POST            admin/users ......................................... admin.users.store ΓÇ║ Admin\UserController@store
+  GET|HEAD        admin/users/create ................................ admin.users.create ΓÇ║ Admin\UserController@create
+  PUT|PATCH       admin/users/{user} ................................ admin.users.update ΓÇ║ Admin\UserController@update
+  DELETE          admin/users/{user} .............................. admin.users.destroy ΓÇ║ Admin\UserController@destroy
+  POST            admin/users/{user}/api-token ......... admin.users.api-token ΓÇ║ Admin\UserController@generateApiToken
+  GET|HEAD        admin/users/{user}/edit ............................... admin.users.edit ΓÇ║ Admin\UserController@edit
+  POST            api/v1/activate ................................ api.v1.activate ΓÇ║ Api\ValidationController@activate
+  POST            api/v1/deactivate .......................... api.v1.deactivate ΓÇ║ Api\ValidationController@deactivate
+  GET|HEAD        api/v1/key/{key} ................................... api.v1.key.info ΓÇ║ Api\ValidationController@info
+  POST            api/v1/validate ................................ api.v1.validate ΓÇ║ Api\ValidationController@validate
+  GET|HEAD        billing/portal .......................................... billing.portal ΓÇ║ CheckoutController@portal
+  POST            checkout/{plan} ...................................... checkout.session ΓÇ║ CheckoutController@session
+  GET|HEAD        client/dashboard ............................... client.dashboard ΓÇ║ Client\DashboardController@index
+  POST            client/keys ............................... client.keys.store ΓÇ║ Client\ActivationKeyController@store
+  GET|HEAD        client/keys ............................... client.keys.index ΓÇ║ Client\ActivationKeyController@index
+  GET|HEAD        client/keys/create ...................... client.keys.create ΓÇ║ Client\ActivationKeyController@create
+  GET|HEAD        client/keys/{activationKey} ................. client.keys.show ΓÇ║ Client\ActivationKeyController@show
+  PUT             client/keys/{activationKey} ............. client.keys.update ΓÇ║ Client\ActivationKeyController@update
+  GET|HEAD        client/keys/{activationKey}/edit ............ client.keys.edit ΓÇ║ Client\ActivationKeyController@edit
+  POST            client/keys/{activationKey}/revoke ...... client.keys.revoke ΓÇ║ Client\ActivationKeyController@revoke
+  GET|HEAD        client/password ........................ client.password ΓÇ║ Client\ProfileController@showPasswordForm
+  POST            client/password ................... client.password.update ΓÇ║ Client\ProfileController@updatePassword
+  GET|HEAD        client/profile ...................................... client.profile ΓÇ║ Client\ProfileController@show
+  POST            client/profile ............................. client.profile.update ΓÇ║ Client\ProfileController@update
+  POST            client/profile/api-token ...... client.profile.api-token ΓÇ║ Client\ProfileController@generateApiToken
+  GET|HEAD        confirm-password ........................ password.confirm ΓÇ║ Auth\ConfirmablePasswordController@show
+  POST            confirm-password .......................................... Auth\ConfirmablePasswordController@store
+  POST            customer/claim ........................................... customer.claim ΓÇ║ CustomerController@claim
+  GET|HEAD        customer/dashboard ............................... customer.dashboard ΓÇ║ CustomerController@dashboard
+  DELETE          customer/keys/{activationKey} ........................ customer.unclaim ΓÇ║ CustomerController@unclaim
+  GET|HEAD        customer/register .......................... customer.register ΓÇ║ CustomerController@showRegisterForm
+  POST            customer/register ...................................................... CustomerController@register
+  GET|HEAD        dashboard ............................................................ dashboard ΓÇ║ routes/web.php:32
+  POST            email/verification-notification verification.send ΓÇ║ Auth\EmailVerificationNotificationController@stΓÇª
+  GET|HEAD        forgot-password ......................... password.request ΓÇ║ Auth\PasswordResetLinkController@create
+  POST            forgot-password ............................ password.email ΓÇ║ Auth\PasswordResetLinkController@store
+  GET|HEAD        l/{key} ...................................................... license.show ΓÇ║ LicenseController@show
+  GET|HEAD        login ........................................... login ΓÇ║ Auth\AuthenticatedSessionController@create
+  POST            login .................................................... Auth\AuthenticatedSessionController@store
+  POST            logout ........................................ logout ΓÇ║ Auth\AuthenticatedSessionController@destroy
+  GET|HEAD        p/{slug} ................................................................ page ΓÇ║ HomeController@page
+  PUT             password .......................................... password.update ΓÇ║ Auth\PasswordController@update
+  GET|HEAD        register ........................................... register ΓÇ║ Auth\RegisteredUserController@create
+  POST            register ....................................................... Auth\RegisteredUserController@store
+  POST            reset-password ................................... password.store ΓÇ║ Auth\NewPasswordController@store
+  GET|HEAD        reset-password/{token} .......................... password.reset ΓÇ║ Auth\NewPasswordController@create
+  GET|HEAD        storage/{path} storage.local ΓÇ║ vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemServiceΓÇª
+  PUT             storage/{path} storage.local.upload ΓÇ║ vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemΓÇª
+  POST            stripe/webhook ..................................... stripe.webhook ΓÇ║ StripeWebhookController@handle
+  GET|HEAD        up ..... vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php:219
+  GET|HEAD        verify-email .......................... verification.notice ΓÇ║ Auth\EmailVerificationPromptController
+  GET|HEAD        verify-email/{id}/{hash} .......................... verification.verify ΓÇ║ Auth\VerifyEmailController
+
+                                                                                                   Showing [97] routes
+
