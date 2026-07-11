@@ -63,7 +63,12 @@ Run migrations:
 php artisan migrate
 
 ## More Information
-If you are interested in extending this application, please feel free to commit changes.
-The application remains the property of Moorcam Development.
-Visit https://www.moorcam.com.au
-Email: info@moorcam.com.au
+## Contributing
+
+MoorKeys was created to give developers a free, open-source licensing platform built with Laravel. If you have ideas, improvements, or bug fixes, we'd love your contributions. Simply fork the repository, make your changes, and submit a pull request.
+
+Created and maintained by **Moorcam Development**.
+
+🌐 https://www.moorcam.com.au
+📧 [info@moorcam.com.au](mailto:info@moorcam.com.au)
+
