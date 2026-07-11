@@ -62,7 +62,6 @@ Run migrations:
 
 php artisan migrate
 
-## More Information
 ## Contributing
 
 MoorKeys was created to give developers a free, open-source licensing platform built with Laravel. If you have ideas, improvements, or bug fixes, we'd love your contributions. Simply fork the repository, make your changes, and submit a pull request.
