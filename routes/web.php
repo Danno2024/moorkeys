@@ -18,6 +18,17 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Client\DashboardController as ClientDashboardController;
 use App\Http\Controllers\Client\ActivationKeyController as ClientActivationKeyController;
 use App\Http\Controllers\Client\ProfileController as ClientProfileController;
+use App\Http\Controllers\Install\InstallController;
+
+// Installer routes (only available if not installed)
+Route::middleware('install.check')->group(function () {
+    Route::get('/install', [InstallController::class, 'index'])->name('install.welcome');
+    Route::get('/install/requirements', [InstallController::class, 'requirements'])->name('install.requirements');
+    Route::match(['get', 'post'], '/install/database', [InstallController::class, 'database'])->name('install.database');
+    Route::match(['get', 'post'], '/install/admin', [InstallController::class, 'admin'])->name('install.admin');
+    Route::match(['get', 'post'], '/install/seed', [InstallController::class, 'seed'])->name('install.seed');
+    Route::get('/install/complete', [InstallController::class, 'complete'])->name('install.complete');
+});
 
 // Public routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -68,6 +79,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('settings', [AdminSettingController::class, 'update'])->name('settings.update');
         Route::get('settings/maintenance', [AdminSettingController::class, 'maintenance'])->name('settings.maintenance');
         Route::post('settings/maintenance', [AdminSettingController::class, 'toggleMaintenance'])->name('settings.toggle-maintenance');
+        Route::get('settings/reinstall', [AdminSettingController::class, 'reinstall'])->name('settings.reinstall');
+        Route::post('settings/reinstall', [AdminSettingController::class, 'reinstallConfirm'])->name('settings.reinstall.confirm');
 
         Route::resource('email-templates', AdminEmailTemplateController::class)->except(['show']);
         Route::get('email-templates/{email_template}/preview', [AdminEmailTemplateController::class, 'preview'])->name('email-templates.preview');

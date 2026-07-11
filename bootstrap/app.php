@@ -16,6 +16,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
             'two-factor' => \App\Http\Middleware\TwoFactorMiddleware::class,
             'api.auth' => \App\Http\Middleware\ApiAuthenticate::class,
+            'install.check' => \App\Http\Middleware\InstallCheck::class,
         ]);
 
         $middleware->validateCsrfTokens(

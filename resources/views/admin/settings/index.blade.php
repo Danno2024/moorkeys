@@ -75,6 +75,7 @@
             <h3 class="text-sm font-medium text-gray-700 mb-3">Quick Links</h3>
             <div class="space-y-2">
                 <a href="{{ route('admin.settings.maintenance') }}" class="block w-full text-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 text-sm">Maintenance Mode</a>
+                <a href="{{ route('admin.settings.reinstall') }}" class="block w-full text-center px-4 py-2 bg-red-50 text-red-700 border border-red-200 rounded-lg hover:bg-red-100 text-sm font-medium">Reinstall System</a>
             </div>
         </div>
     </div>

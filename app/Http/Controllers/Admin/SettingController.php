@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
@@ -87,5 +90,43 @@ class SettingController extends Controller
         }
 
         return back()->with('success', 'Maintenance mode ' . ($request->boolean('mode') ? 'enabled' : 'disabled') . '.');
+    }
+
+    public function reinstall()
+    {
+        return view('admin.settings.reinstall');
+    }
+
+    public function reinstallConfirm(Request $request)
+    {
+        $request->validate([
+            'confirm' => 'required|accepted',
+        ]);
+
+        try {
+            // Drop all tables
+            DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+            $tables = DB::select('SHOW TABLES');
+            foreach ($tables as $table) {
+                $tableName = array_values((array)$table)[0];
+                DB::statement("DROP TABLE IF EXISTS `{$tableName}`");
+            }
+            DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+            // Remove installed marker
+            if (File::exists(storage_path('installed'))) {
+                File::delete(storage_path('installed'));
+            }
+
+            // Clear all caches
+            Artisan::call('config:clear');
+            Artisan::call('route:clear');
+            Artisan::call('view:clear');
+            Artisan::call('cache:clear');
+
+            return redirect()->route('install.welcome')->with('success', 'System reset complete. Redirecting to installer...');
+        } catch (\Exception $e) {
+            return back()->withErrors(['reinstall' => 'Reinstall failed: ' . $e->getMessage()]);
+        }
     }
 }
