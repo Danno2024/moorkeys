@@ -61,3 +61,9 @@ php artisan key:generate
 Run migrations:
 
 php artisan migrate
+
+## More Information
+If you are interested in extending this application, please feel free to commit changes.
+The application remains the property of Moorcam Development.
+Visit https://www.moorcam.com.au
+Email: info@moorcam.com.au
