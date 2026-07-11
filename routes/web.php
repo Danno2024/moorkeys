@@ -58,7 +58,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('plans', AdminPlanController::class)->except(['show']);
 
         Route::post('keys/bulk-create', [AdminActivationKeyController::class, 'bulkCreate'])->name('keys.bulk-create');
-        Route::resource('keys', AdminActivationKeyController::class);
+        Route::resource('keys', AdminActivationKeyController::class)->parameters([
+            'keys' => 'activationKey',
+        ]);
 
         Route::resource('pages', AdminPageController::class)->except(['show']);
 

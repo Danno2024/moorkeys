@@ -22,6 +22,11 @@ class ActivationKey extends Model
         'metadata',
     ];
 
+    public function getRouteKeyName(): string
+    {
+        return 'id';
+    }
+
     protected function casts(): array
     {
         return [
